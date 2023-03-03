@@ -58,7 +58,7 @@ const SearchForm = () =>{
             <div className="heading mb-1">Departure Airport</div>
             <div className="placeholder placeholder-airport">
                 <input type="text" placeholder="Departure Airport" className="placeholder placeholder-airport" onChange={DepartureHandler} value={DepartureName} />
-                {(Errors && Errors.DepartureName)?<h3 style={{backgroundColor: 'rgba(100, 100, 100, 0.5)'}}>Enter DepartureName</h3>:null}
+                {(Errors && Errors.DepartureName)?<h5 style={{backgroundColor: 'rgba(100, 100, 100, 0.5)'}}>Enter Departure Point</h5>:null}
             </div> <i
                 className="fas fa-map-marker-alt input-icon"></i>
         </label>
@@ -67,12 +67,12 @@ const SearchForm = () =>{
                 <div className="heading mb-1">Parking Check-In</div>
                 <div className="placeholder">
                     <input name="checkin" type="date" placeholder="Parking Check-Out" className="placeholder placeholder-airport" style={{width:'100%'}} onChange={CheckinHandler}/>
-                    {(Errors && Errors.Checkin)?<h3 style={{backgroundColor: 'rgba(100, 100, 100, 0.5)'}}>Enter checkin date</h3>:null}
+                    {(Errors && Errors.Checkin)?<h5 style={{backgroundColor: 'rgba(100, 100, 100, 0.5)'}}>Checkin Date Mandatory</h5>:null}
                 </div> 
             </label> <label className="col-sm-6 p-0 pl-sm-0 date_input">
                 <div className="heading mb-1">Parking Check-Out</div>
                     <input name="Check-Out" type="date" placeholder="Parking Check-Out" className="placeholder placeholder-airport" style={{width:'100%'}} onChange={CheckoutHandler}/>
-                    {(Errors && Errors.Checkout)?<h3 style={{backgroundColor: 'rgba(100, 100, 100, 0.5)'}}>Enter checkout date</h3>:null}
+                    {(Errors && Errors.Checkout)?<h5 style={{backgroundColor: 'rgba(100, 100, 100, 0.5)'}}>Checkout Date Mandatory</h5>:null}
                
             </label></div>
         <div className="col-12 col-xl-2 p-0 pl-xl-3 my-3 my-xl-0">
