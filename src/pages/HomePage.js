@@ -5,9 +5,9 @@ const HomePage = () =>{
     return(
     <div id="app" className="generic">
         <div>
-            <app-header>
+            {/* <app-header>
                 <Header/>
-            </app-header>
+            </app-header> */}
             <div className="content">
                 <us-page-home inline-template>
                     <section id="home_page">
@@ -85,7 +85,7 @@ const HomePage = () =>{
                                 </ul>
                             </div>
                         </section>
-                        <Footer/>
+                        {/* <Footer/> */}
                     </section>
                 </us-page-home>
             </div>
