@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import moment from 'moment'
 const SearchForm = () =>{
 
     const [Errors,setErrors]=useState({
@@ -6,10 +7,11 @@ const SearchForm = () =>{
         Checkin:false,
         Checkout:false
     });
-
+    const today=moment().format('YYYY-MM-DD').toString()
+    const tomorrow = moment().add(1,'days').format('YYYY-MM-DD').toString()
     const[DepartureName,setDepartureName]=useState('Delhi');
-    const[Checkin,setCheckin]=useState('');
-    const[Checkout,setCheckout]=useState('');
+    const[Checkin,setCheckin]=useState(today);
+    const[Checkout,setCheckout]=useState(tomorrow);
 
     const DepartureHandler = (e) =>{
       const {value} = e.target;
@@ -31,8 +33,13 @@ const SearchForm = () =>{
     const CheckoutHandler = (e) =>{
         const {value} = e.target;
         setCheckout(value);
+        if(moment(Checkin)>moment(Checkout)){
+            setErrors((err)=>({...err, Checkout:true}))
+        }
         if(e.target.value){
-            setErrors((err)=>({...err, Checkout:null}))
+            setErrors((err)=>({...err, Checkout:false}))
+        }else{
+            setErrors((err)=>({...err, Checkout:true}))
         }
     }
     
@@ -41,7 +48,10 @@ const SearchForm = () =>{
         console.log(DepartureName);
         console.log(Checkin);
         console.log(Checkout);
-
+        if(moment(Checkin)>moment(Checkout)){
+            alert("Error")
+            setErrors((err)=>({...err, Checkout:true}))
+        }else
         if(DepartureName && Checkin && Checkout){
             alert('Form has been Submitted');
         }else{
