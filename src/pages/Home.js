@@ -2,8 +2,8 @@ import React from "react";
 import { useState } from "react";
 import moment from "moment";
 import axios from "axios";
+import AirportSuggestions from "../components/AirportSuggestions";
 import { useEffect } from "react";
-import AirportSuggetions from "./AirportSuggestions";
 //import { useNavigate } from "react-router-dom";
 const SearchForm = () => {
   const [airports, setAirports] = useState([]);
@@ -179,8 +179,8 @@ const SearchForm = () => {
                     onChange={departureAirportHandler}
                     value={departureAirport}
                   />
-                  {Loading ? <h1>Loading</h1> : null}
-                  <AirportSuggetions
+                  {Loading ? <h1>loading..</h1> : null}
+                  <AirportSuggestions
                     airports={filteredAirports}
                     selectAirport={selectAirport}
                   />
