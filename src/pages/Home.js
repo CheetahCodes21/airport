@@ -3,13 +3,13 @@ import { useState } from "react";
 import moment from "moment";
 import axios from "axios";
 import { useEffect } from "react";
-import AirportSuggetions from "../components/AirportSuggestions";
-import { useNavigate } from "react-router-dom";
+import AirportSuggetions from "./AirportSuggestions";
+//import { useNavigate } from "react-router-dom";
 const SearchForm = () => {
   const [airports, setAirports] = useState([]);
   const [filteredAirports, setFilteredAirports] = useState("");
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [records, setRecords] = useState([]);
   const [Loading, setLoading] = useState(true);
   const fetchData = async () => {
@@ -107,10 +107,10 @@ const SearchForm = () => {
       setError((error) => ({ ...error, parkingCheckOut: true }));
     } else {
       if (departureAirport && parkingCheckIn && parkingCheckOut) {
-        navigate(
-          `/results?departureAirport=${departureAirport}&parkingCheckIn=${parkingCheckIn}&parkingCheckOut=${parkingCheckOut}`
-        );
-        //window.location.href = `/results?departureAirport=${departureAirport}&checkin=${parkingCheckIn}&checkout=${parkingCheckOut}`
+        // navigate(
+        //   `/results?departureAirport=${departureAirport}&parkingCheckIn=${parkingCheckIn}&parkingCheckOut=${parkingCheckOut}`
+        // );
+        window.location.href = `/results?departureAirport=${departureAirport}&checkin=${parkingCheckIn}&checkout=${parkingCheckOut}`
         alert("Form has been submitted successfully 👍");
       } else {
         setError({
