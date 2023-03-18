@@ -14,7 +14,7 @@ const SearchForm = () => {
   const [Loading, setLoading] = useState(true);
   const fetchData = async () => {
     setLoading(true);
-    const { data } = await axios.get("http://43.205.1.85:9009/v1/airports");
+    const { data } = await axios.get("https://rl.talentcoco.in/v1/airports");
     setLoading(false);
     setRecords(data.results);
   };
@@ -35,7 +35,7 @@ const SearchForm = () => {
   const getAirport = async () => {
     try {
       const { data, status } = await axios.get(
-        "http://43.205.1.85:9009/v1/airports"
+        "https://rl.talentcoco.in/v1/airports"
       );
       if (status === 200 && data) {
         setAirports(data?.results ?? []);
@@ -48,7 +48,7 @@ const SearchForm = () => {
       console.log(error.message);
     }
   };
-
+// moment-to compare the validation of date
   const today = moment().format("YYYY-MM-DD").toString();
   const tomorrow = moment().add(1, "days").format("YYYY-MM-DD").toString();
 
