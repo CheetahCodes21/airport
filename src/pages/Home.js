@@ -199,7 +199,7 @@ const SearchForm = () => {
                     <input
                       name="checkin"
                       type="date"
-                      placeholder="Parking Check-Out"
+                      placeholder="Parking Check-In"
                       className="placeholder placeholder-airport"
                       style={{ width: "100%" }}
                       value={parkingCheckIn}
